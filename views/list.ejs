@@ -1,0 +1,38 @@
+
+<!-- including header.ejs as header using ejs layout property -->
+ <%- include('header'); -%>
+ 
+  <div class="box" id="heading">
+    <h1 style="color: white;"><%= ListType%> </h1> 
+
+   
+  </div>
+      
+    
+  <div class="box">
+    
+      
+   <%   for(var i=0;i<newInput.length ;i++){ %>
+     <form action="/delete" method="post">
+        <div class='item'>
+          <input type="checkbox" onchange="this.form.submit()" name="checkbox" value="<%= newInput[i]._id%>">
+        <p> <%= newInput[i].name %></p>
+        </div>
+     </form>
+     
+    <% } %>
+    
+    <form class="item" action="/" method="post">
+      <!-- <label for="inputid">Enter the task</label> -->
+      <input id="inputid"type="text" name="newItem" placeholder="New Item" autocomplete="off">
+      <button type="submit" name="list" value= <%= ListType%>>+</button>
+    </form>
+  </div>
+ 
+  <%- include('footer'); -%>
+  <!-- <footer>
+    copyright 2022 Pranav Pragayn.
+  </footer>
+    
+</body>
+</html> -->
